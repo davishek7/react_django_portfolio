@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','avishekdas.herokuapp.com']
 
 
 INSTALLED_APPS = [
