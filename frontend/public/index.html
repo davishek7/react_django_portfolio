@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/static/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/static/default.css" />
+    <link id="theme-style" rel="stylesheet" type="text/css" href="" />
+
+    <title>Avishek's Portfolio</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+
+  <script>
+    let theme = localStorage.getItem("theme");
+    const setTheme = (mode) => {
+      if (mode == "light") {
+        document.getElementById("theme-style").href = "%PUBLIC_URL%/static/default.css";
+      }
+      if (mode == "blue") {
+        document.getElementById("theme-style").href = "%PUBLIC_URL%/static/blue.css";
+      }
+      if (mode == "green") {
+        document.getElementById("theme-style").href = "%PUBLIC_URL%/static/green.css";
+      }
+      if (mode == "purple") {
+        document.getElementById("theme-style").href = "%PUBLIC_URL%/static/purple.css";
+      }
+      localStorage.setItem("theme", mode);
+    };
+
+    if (theme == null) {
+      setTheme("light");
+    } else {
+      setTheme(theme);
+    }
+
+    let themeDots = document.getElementsByClassName("theme-dot");
+
+    for (var i = 0; themeDots.length > i; i++) {
+      themeDots[i].addEventListener("click", function () {
+        let mode = this.dataset.mode;
+        setTheme(mode);
+      });
+    }
+
+    var mybutton = document.getElementById("topBtn");
+
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    const scrollFunction = () => {
+      if (
+        document.body.scrollTop > 200 ||
+        document.documentElement.scrollTop > 200
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+  </script>
+</html>
