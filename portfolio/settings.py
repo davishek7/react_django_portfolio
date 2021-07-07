@@ -127,7 +127,7 @@ REST_FRAMEWORK = {
    ],
 }
 
-# CORS_ALLOWED_ORIGINS = ['http://localhost:3000']
+CORS_ALLOW_ALL_ORIGINS = True
 
-# if os.getcwd() == '/app':
-#     DEBUG = False
+if os.getcwd() == '/app':
+    DEBUG = False

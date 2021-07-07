@@ -51,6 +51,10 @@ const Contact = () => {
         `Thank you ${name} for contacting me! I will back to you later.`,
         { position: toast.POSITION.TOP_CENTER }
       );
+      setName('')
+      setSubject('')
+      setEmail('')
+      setMessage('')
     } else{
       toast.error("Something went wrong! Please try again later.", {
         position: toast.POSITION.TOP_CENTER,
