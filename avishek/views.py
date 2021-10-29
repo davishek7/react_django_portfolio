@@ -17,20 +17,16 @@ def get_all_projects(request):
 @api_view(['POST'])
 def contact_view(request):
 
-    if request.method == 'POST':
-        serializer = ContactSerailizer(data=request.data)
-        if serializer.is_valid():
-            name=request.POST['name']
-            subject=request.POST['subject']
-            email=request.POST['email']
-            message=request.POST['message']
-    
-            send_mail(
-                f'{subject} from {name}({email})',
-                message,
-                email,
-                [os.environ.get('RECEIVER_EMAIL')]
-            )
-            return Response(serializer.data,status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    name=request.data['name']
+    subject=request.data['subject']
+    email=request.data['email']
+    message=request.data['message']
 
+    send_mail(
+        f'{subject} from {name}({email})',
+        message,
+        "Avishek Das <os.environ.get('EMAIL_USER')>",
+        [os.environ.get('RECEIVER_EMAIL')]
+    )
+
+    return Response({'message':f'Thank you {name} for contacting me! I will be back to you later.'},status=status.HTTP_201_CREATED)

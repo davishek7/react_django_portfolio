@@ -47,8 +47,9 @@ const Contact = () => {
     };
     const res = await axios.post("/api/contact_view/", formData, config);
     if (res.status === 201) {
+      console.log(res)
       toast.info(
-        `Thank you ${name} for contacting me! I will back to you later.`,
+        res.data['message'],
         { position: toast.POSITION.TOP_CENTER }
       );
       setName('')
