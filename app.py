@@ -10,7 +10,10 @@ from flask_mail import Mail, Message
 app = Flask(__name__, static_folder="frontend/build/static", template_folder="frontend/build")
 
 # app configurations
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+if os.getcwd() == '/app':
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL_PGSQL')
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['MAIL_SERVER'] = os.environ.get('EMAIL_HOST')
