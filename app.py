@@ -63,7 +63,7 @@ def get_all_projects():
     projects = Project.query.all()
 
     for project in projects:
-        project.image = f'https://res.cloudinary.com/davishek7/image/upload/v1/portfolio_media/{project.image}'
+        project.image = f'https://res.cloudinary.com/davishek7/image/upload/v1/{project.image}'
     return jsonify({'projects' : projects})
 
 
