@@ -14,6 +14,11 @@ django-cloudinary-storage = "*"
 gunicorn = "*"
 python-dotenv = "*"
 psycopg2-binary = "*"
+flask = "*"
+flask-sqlalchemy = "*"
+flask-migrate = "*"
+flask-cors = "*"
+flask-mail = "*"
 
 [dev-packages]
 

@@ -41,12 +41,12 @@ const Contact = () => {
 
     const config = {
       headers: {
-        "Content-type": "application/json",
+        "Content-type": "multipart/form-data",
         "X-CSRFToken":getCookie('csrftoken')
       },
     };
     const res = await axios.post("/api/contact_view/", formData, config);
-    if (res.status === 201) {
+    if (res.data['status'] === true) {
       console.log(res)
       toast.info(
         res.data['message'],

@@ -6,10 +6,11 @@ const Projects = () => {
 
     const [projects,setProjects] = useState([])
 
-    useEffect(()=>{ 
+    useEffect(()=>{
         const getDataFromAPI = async () =>{
             const res = await axios.get('/api/')
-            setProjects(res.data)
+            console.log(res.data);
+            setProjects(res.data.projects)
         }
         getDataFromAPI();
     },[])
