@@ -2,7 +2,6 @@ import os
 from dataclasses import dataclass
 from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from flask_cors import CORS, cross_origin
 from flask_mail import Mail, Message
 
@@ -26,7 +25,6 @@ app.config['MAIL_USE_TLS'] = True
 
 
 db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 mail = Mail(app)
 
 
