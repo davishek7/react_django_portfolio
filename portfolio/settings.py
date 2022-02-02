@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     # Third party packages
     'rest_framework',
     'corsheaders',
+    'django_q',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,14 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 if os.getcwd() == '/app':
     DEBUG = False
+
+
+Q_CLUSTER = {
+    'name': 'portfolio',
+    'workers': 4,
+    'timeout': 90,
+    'retry': 120,
+    'queue_limit': 50,
+    'bulk': 10,
+    'orm': 'default'
+}

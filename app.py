@@ -65,7 +65,7 @@ def get_all_projects():
 
     for project in projects:
         project.image = f'https://res.cloudinary.com/davishek7/image/upload/v1/{project.image}'
-    return jsonify({'projects' : projects})
+    return jsonify(projects)
 
 
 @app.route('/api/contact_view/', methods=['POST'])

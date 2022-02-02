@@ -19,6 +19,7 @@ flask-sqlalchemy = "*"
 flask-migrate = "*"
 flask-cors = "*"
 flask-mail = "*"
+django-q = "*"
 
 [dev-packages]
 

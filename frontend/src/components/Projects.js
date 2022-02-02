@@ -10,7 +10,7 @@ const Projects = () => {
         const getDataFromAPI = async () =>{
             const res = await axios.get('/api/')
             console.log(res.data);
-            setProjects(res.data.projects)
+            setProjects(res.data)
         }
         getDataFromAPI();
     },[])
