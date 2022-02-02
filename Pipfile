@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 djangorestframework = "*"
 dj-database-url = "*"
 django-cors-headers = "*"
@@ -20,6 +19,7 @@ flask-migrate = "*"
 flask-cors = "*"
 flask-mail = "*"
 django-q = "*"
+django = "==3.2"
 
 [dev-packages]
 
