@@ -5,5 +5,5 @@ app_name = 'api'
 
 urlpatterns = [
     path('',views.get_all_projects,name='get_all_projects'),
-    path('contact_view/',views.contact_view,name='contact_view'),
+    path('contact-view/',views.contact_view,name='contact_view'),
 ]

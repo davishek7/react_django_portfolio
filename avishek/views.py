@@ -33,6 +33,5 @@ def contact_view(request):
             [os.environ.get('RECEIVER_EMAIL')],
             schedule_type=Schedule.ONCE,
             next_run=datetime.utcnow() + timedelta(minutes=1))
-
-
+        
     return Response({'status':True,'message':f'Thank you {name} for contacting me! I will be back to you later.'},status=status.HTTP_201_CREATED)

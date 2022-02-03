@@ -40,8 +40,7 @@ const Intro = () => {
                   <div id="corner-tr" className="corner"></div>
                   <h3>What I Do</h3>
                   <p>
-                    I am now studying Computer Science and Engineering, and I am a
-                    django developer.
+                    I am currently working as an Associate Developer at Vyrazu Labs Pvt Ltd.
                   </p>
                   <div id="corner-br" className="corner"></div>
                   <div id="corner-bl" className="corner"></div>

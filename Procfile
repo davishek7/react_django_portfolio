@@ -1,2 +1,1 @@
-web: gunicorn portfolio.wsgi
-worker: python manage.py qcluster
+web: gunicorn app:app

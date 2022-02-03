@@ -45,7 +45,7 @@ const Contact = () => {
         "X-CSRFToken":getCookie('csrftoken')
       },
     };
-    const res = await axios.post("/api/contact_view/", formData, config);
+    const res = await axios.post("http://127.0.0.1:5000/api/contact-view/", formData, config);
     if (res.data['status'] === true) {
       console.log(res)
       toast.info(

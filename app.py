@@ -68,7 +68,7 @@ def get_all_projects():
     return jsonify(projects)
 
 
-@app.route('/api/contact_view/', methods=['POST'])
+@app.route('/api/contact-view/', methods=['POST'])
 @cross_origin()
 def contact_view():
 

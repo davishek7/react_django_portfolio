@@ -7,6 +7,14 @@ const About = () => {
       <div className="main-container">
         <div className="about-wrapper">
           <div className="about-me">
+          <h4>Work Experience</h4>
+            <h5>Associate Developer
+              <br />
+              <i>Vyrazu Labs Pvt. Ltd.</i>
+              <br />
+              <span style={{ fontSize: "15px" }}>from August,2021 to Present</span>
+            </h5>
+            <hr/>
             <h4>Internship</h4>
             <h5>Django Web Developer Intern
               <br />
@@ -43,10 +51,15 @@ const About = () => {
                 <li>Django</li>
                 <li>JavaScript</li>
                 <li>React</li>
+                <li>SQL</li>
                 <li>PostgreSQL</li>
+                <li>Github</li>
               </ul>
 
               <ul>
+                <li>Gitlab</li>
+                <li>MySQL</li>
+                <li>Git</li>
                 <li>AJAX</li>
                 <li>Flask</li>
                 <li>Heroku</li>
@@ -56,7 +69,7 @@ const About = () => {
           </div>
 
           <div className="social-links">
-            <img src={process.env.PUBLIC_URL +"/static/follow.png"} alt="follow me" id="social_img" />
+            <img src={process.env.PUBLIC_URL +"/static/github.png"} alt="follow me" id="social_img" />
             <h3>Find me on Twitter & Linkedin</h3>
             <a
               target="_blank"
