@@ -13,8 +13,8 @@ class ProjectAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
-    list_display = ['__str__', 'subject', 'details']
-    search_fields = ['name', 'subject', 'email', 'details']
+    list_display = ['__str__', 'subject', 'message']
+    search_fields = ['name', 'subject', 'email', 'message']
 
     class Meta:
         model = Contact
