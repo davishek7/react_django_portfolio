@@ -1,4 +1,4 @@
-from .models import Project
+from .models import Project, Contact
 from rest_framework import serializers
 
 
@@ -8,8 +8,7 @@ class ProjectSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class ContactSerailizer(serializers.Serializer):
-    name = serializers.CharField()
-    subject = serializers.CharField()
-    email = serializers.EmailField()
-    message = serializers.CharField()
+class ContactSerailizer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = '__all__'

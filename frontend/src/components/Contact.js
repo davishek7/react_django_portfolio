@@ -57,7 +57,7 @@ const Contact = () => {
       setEmail('')
       setMessage('')
     } else{
-      toast.error("Something went wrong! Please try again later.", {
+      toast.error(res.data['message'], {
         position: toast.POSITION.TOP_CENTER,
       });
     }
