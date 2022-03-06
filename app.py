@@ -1,4 +1,5 @@
 import os
+import cloudinary
 from dataclasses import dataclass
 from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
@@ -21,7 +22,14 @@ app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('EMAIL_USER')
 app.config['MAIL_USE_TLS'] = True
+app.config['MEDIA_DIR'] = 'portfolio_media/'
 
+
+cloudinary.config(
+  cloud_name = os.environ.get('CLOUD_NAME'),  
+  api_key = os.environ.get('API_KEY'),  
+  api_secret = os.environ.get('API_SECRET') 
+)
 
 
 db = SQLAlchemy(app)
@@ -64,7 +72,7 @@ def get_all_projects():
     projects = Project.query.all()
 
     for project in projects:
-        project.image = f'https://res.cloudinary.com/davishek7/image/upload/v1/{project.image}'
+        project.image = cloudinary.utils.cloudinary_url(app.config['MEDIA_DIR'] + project.image)[0]
     return jsonify(projects)
 
 
@@ -79,7 +87,7 @@ def contact_view():
 
     msg = Message(
                 f'{subject} from {name}({email})',
-                sender = "Avishek Das",
+                sender = os.environ.get('EMAIL_USER'),
                 recipients = [os.environ.get('RECEIVER_EMAIL')]
                  )
     msg.body = message
