@@ -12,7 +12,7 @@ const About = () => {
               <br />
               <i>Vyrazu Labs Pvt. Ltd.</i>
               <br />
-              <span style={{ fontSize: "15px" }}>from August,2021 to Present</span>
+              <span style={{ fontSize: "15px" }}>from August, 2021 to July, 2022</span>
             </h5>
             <hr/>
             <h4>Internship</h4>
